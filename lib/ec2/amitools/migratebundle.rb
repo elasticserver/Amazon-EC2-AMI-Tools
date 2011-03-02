@@ -148,6 +148,7 @@ class BundleMigrator < AMITool
       region = "eu-west-1"      if location == "EU"
       region = "us-west-1"      if location == "us-west-1"
       region = "ap-southeast-1" if location == "ap-southeast-1"
+      region = "ap-northeast-1" if location == "ap-northeast-1"
       puts "Region not provided, guessing from S3 location: #{region}"
     end
     

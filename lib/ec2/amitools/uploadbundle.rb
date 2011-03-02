@@ -195,11 +195,12 @@ class BundleUploader < AMITool
     'us-east-1'      => :unconstrained,
     'eu-west-1'      => 'EU',
     'us-west-1'      => 'us-west-1',
-    'ap-southeast-1' => 'ap-southeast-1'
+    'ap-southeast-1' => 'ap-southeast-1',
+    'ap-northeast-1' => 'ap-northeast-1'
   }
   
   # list of regions
-  REGIONS = ['us-east-1', 'eu-west-1', 'us-west-1', 'ap-southeast-1']
+  REGIONS = ['us-east-1', 'eu-west-1', 'us-west-1', 'ap-southeast-1', 'ap-northeast-1']
 
   def get_region()
     zone = get_availability_zone()

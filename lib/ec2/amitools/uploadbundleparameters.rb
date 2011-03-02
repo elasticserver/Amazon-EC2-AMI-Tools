@@ -22,7 +22,7 @@ class UploadBundleParameters < S3ToolParameters
   PART_DESCRIPTION = "Upload the specified part and upload all subsequent parts."
   RETRY_DESCRIPTION = "Automatically retry failed uploads."
   SKIP_MANIFEST_DESCRIPTION = "Do not upload the manifest."
-  LOCATION_DESCRIPTION = "The location of the bucket to upload to [EU,US,us-west-1,ap-southeast-1]."
+  LOCATION_DESCRIPTION = "The location of the bucket to upload to [EU,US,us-west-1,ap-southeast-1,ap-northeast-1]."
   
   attr_accessor :manifest,
                 :acl,
@@ -71,7 +71,7 @@ class UploadBundleParameters < S3ToolParameters
     end
     
     on('--location LOCATION', LOCATION_DESCRIPTION) do |location|
-      assert_option_in(location, ['EU', 'US', 'us-west-1', 'ap-southeast-1'], '--location')
+      assert_option_in(location, ['EU', 'US', 'us-west-1', 'ap-southeast-1', 'ap-northeast-1'], '--location')
       @location = location
       @location = :unconstrained if @location == "US"
     end

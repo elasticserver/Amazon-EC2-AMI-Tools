@@ -33,7 +33,7 @@ class MigrateBundleParameters < ParametersBase
                      "Defaults to \"aws-exec-read\"."]
   URL_DESCRIPTION = "The S3 service URL. Defaults to https://s3.amazonaws.com."
   RETRY_DESCRIPTION = "Automatically retry failed uploads. Use with caution."
-  LOCATION_DESCRIPTION = "The location of the bucket to upload to [EU,US,us-west-1,ap-southeast-1]."
+  LOCATION_DESCRIPTION = "The location of the bucket to upload to [EU,US,us-west-1,ap-southeast-1,ap-northeast-1]."
   NO_MAPPING_DESCRIPTION = "Do not perform automatic mappings."
   REGION_DESCRIPTION = "Region to look up in the mapping file."
 
@@ -120,7 +120,7 @@ class MigrateBundleParameters < ParametersBase
     end
     
     on('--location LOCATION', LOCATION_DESCRIPTION) do |location|
-      assert_option_in(location, ['EU', 'US', 'us-west-1', 'ap-southeast-1'], '--location')
+      assert_option_in(location, ['EU', 'US', 'us-west-1', 'ap-southeast-1','ap-northeast-1'], '--location')
       @location = location
       @location = :unconstrained if @location == "US"
     end
